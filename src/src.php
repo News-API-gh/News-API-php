@@ -113,7 +113,7 @@ class NewsAPI {
             CURLOPT_SSL_VERIFYHOST => 0
         ];
         curl_setopt_array($cu, $curlArgs);
-        return curl_exec($cu);
+        return json_decode(curl_exec($cu));
     }
 }
 
