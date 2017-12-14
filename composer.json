@@ -1,0 +1,6 @@
+{
+    "name": "news-api/news-api",
+    "type": "library",
+    "license": "MIT",
+    "require": {}
+}
