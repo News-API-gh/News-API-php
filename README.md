@@ -1,6 +1,14 @@
 # News API SDK for PHP
 Coming soon... this is where our officially supported SDK for PHP is going to live.
 
+## Example
+```php
+<?php
+include 'vendor/autoload.php';
+$newsapi = NewsAPI\NewsAPI('your_api_key_here');
+$request = $newsapi->category('technology')->language('en')->getTopHeadlines();
+```
+
 ***
 
 ## Developers... we need you!
