@@ -3,7 +3,7 @@
 namespace NewsAPI;
 
 class NewsAPI {
-    protected $APIKey, $category, $language, $country;
+    protected $APIKey, $category, $language, $country, $q, $sources, $domains, $from, $to, $sortBy, $page;
     public function __construct($APIKey = null) {
         $this->APIKey = $APIKey;
     }
@@ -23,7 +23,70 @@ class NewsAPI {
         $this->country = $country;
         return $this;
     }
-    public function sources($arr = null) {
+    public function q($q) {
+        $this->q = $q;
+        return $this;
+    }
+    public function sources($sources) {
+        $this->sources = $sources;
+        return $this;
+    }
+    public function domains($domains) {
+        $this->domains = $domains;
+        return $this;
+    }
+    public function from($from) {
+        $this->from = $from;
+        return $this;
+    }
+    public function to($to) {
+        $this->to = $to;
+        return $this;
+    }
+    public function sortBy($sortBy) {
+        $this->sortBy = $sortBy;
+        return $this;
+    }
+    public function page($page) {
+        $this->page = $page;
+        return $this;
+    }
+    public function getTopHeadlines($arr = null) {
+        if ($arr != null) {
+            $body = $arr;
+        }
+        else {
+            $body = [
+                'q' => $this->q,
+                'sources' => $this->sources,
+                'category' => $this->category,
+                'language' => $this->language,
+                'country' => $this->country
+            ];
+        }
+        $url = 'https://newsapi.org/v2/top-headlines' . "?" . http_build_query($body);
+        return $this->sendRequest($url);
+    }
+    public function getEverything($arr = null) {
+        if ($arr != null) {
+            $body = $arr;
+        }
+        else {
+            $body = [
+                'q' => $this->q,
+                'sources' => $this->sources,
+                'domains' => $this->domains,
+                'from' => $this->from,
+                'to' => $this->to,
+                'language' => $this->language,
+                'sortBy' => $this->sortBy,
+                'page' => $this->page,
+            ];
+        }
+        $url = 'https://newsapi.org/v2/everything' . "?" . http_build_query($body);
+        return $this->sendRequest($url);
+    }
+    public function getSources($arr = null) {
         if ($arr != null) {
             $body = $arr;
         }
