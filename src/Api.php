@@ -30,13 +30,13 @@ class Api extends AbstractApi {
      * @param type $query
      * @param type TOP_HEADLINE | EVERYTHING | SOURCES
      */
-    public function __construct($query = array() , $type = TOP_HEADLINE ) {
+    public function __construct($query = array() , $type = self::TOP_HEADLINE ) {
         
         $uri = http_build_query($query);
-        $this->url = URL . $type  . "?{$uri}";
+        $url = self::URL . $type  . "?{$uri}";
         
         //execute
-        $this->call();
+        $this->call($url);
         
     }
     

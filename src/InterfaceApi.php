@@ -13,9 +13,8 @@ namespace NewsApi;
  *
  * @author Rodrigo
  */
-class InterfaceApi {
+interface InterfaceApi {
     
-    
-    public function call();
+     
     public function getData(); 
 }

@@ -6,7 +6,10 @@
  * and open the template in the editor.
  */
 
-require_once './src/Api.php';
+require_once './vendor/autoload.php';
 
-$api = new \NewsApi\Api( array('q' => 'Reino Unido' , 'language'=> 'pt' , 'apiKey' => newsapi));
-$api->getData();
+$api = new \NewsApi\Api( array('q' => 'Reino Unido' , 'language'=> 'pt' , 'apiKey' => ''));
+$data = $api->getData();
+
+
+var_dump($data);

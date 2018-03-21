@@ -8,15 +8,14 @@ namespace NewsApi;
  * @author Rodrigo
  */
 class AbstractApi implements InterfaceApi {
+ 
 
-    public $url;
-
-    protected function call() {
+    protected function call($url) {
  
         $curl = curl_init();
 
         curl_setopt_array($curl, array(
-            CURLOPT_URL => $this->url,
+            CURLOPT_URL => $url,
             CURLOPT_RETURNTRANSFER => true,
             CURLOPT_ENCODING => "UTF-8",
             CURLOPT_MAXREDIRS => 10,
