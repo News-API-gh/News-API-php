@@ -15,30 +15,22 @@ namespace NewsApi;
  */
 class Api extends AbstractApi {
 
-//put your code here
-
-
-    const NEWSAPI = '';
-    const URL = 'https://newsapi.org/v2/';
-    const TOP_HEADLINE = 'top-headlines';
-    const EVERYTHING = 'everything';
-    const SOURCES = 'sources';
-    
-    
     /**
      * 
      * @param type $query
      * @param type TOP_HEADLINE | EVERYTHING | SOURCES
      */
-    public function __construct($query = array() , $type = self::TOP_HEADLINE ) {
-        
+    public function __construct($query = array(), $type = self::TOP_HEADLINE) {
+
         $uri = http_build_query($query);
-        $url = self::URL . $type  . "?{$uri}";
+        $url = self::URL . $type . "?{$uri}";
+ 
         
-        //execute
-        $this->call($url);
-        
+        if ($this->validate($query) && $this->validate(['type' => $type])) {
+            //execute
+            $this->call($url);
+        }
     }
-    
-    
+
+   
 }
