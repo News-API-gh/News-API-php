@@ -1,7 +1,17 @@
-# News API SDK for PHP
-Coming soon... this is where our officially supported SDK for PHP is going to live.
+# News API SDK for PHP 
 
-***
+Search through millions of articles from over 30,000 large and small news sources and blogs. This includes breaking news as well as lesser articles.
+find out more about it: [documentation](https://newsapi.org/docs/)
 
-## Developers... we need you!
-We need some help fleshing out this repo. If you're a PHP dev with experience building Composer-compatible libraries and web API wrappers, we're offering a reward of $250 to help us get started. For more info please email support@newsapi.org, or dive right in and send us a pull request.
+# Example
+
+require_once './src/Api.php';
+
+$api = new \NewsApi\Api( array('q' => 'Reino Unido' , 'language'=> 'pt' , 'apiKey' => newsapi));
+$api->getData();
+
+
+# Composer install
+
+> composer require rmanara/news-api-php
+
