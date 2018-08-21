@@ -1,0 +1,24 @@
+{
+    "name": "newsorg/commercial",
+    "description": "News API Commercial PHP Library.",
+    "keywords": ["newsapi", "composer", "package"],
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Goodwish Matyila",
+            "email": "goomatyila@gmail.com"
+        }
+    ],
+    "type": "library",
+    "require": {
+		"php": ">=7.1"
+    },
+	"require-dev": {
+		"phpunit/phpunit": "7.1.*"
+    },
+	"autoload": {
+        "psr-4": {
+            "News\\Resources\\": "src/"
+        }
+    }
+}

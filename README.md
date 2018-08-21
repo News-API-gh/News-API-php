@@ -1,7 +1,107 @@
-# News API SDK for PHP
-Coming soon... this is where our officially supported SDK for PHP is going to live.
 
-***
+# News API Commercial PHP Library.
+ 
+# Installation 
+<pre> 
+composer require newsorg/commercial
 
-## Developers... we need you!
-We need some help fleshing out this repo. If you're a PHP dev with experience building Composer-compatible libraries and web API wrappers, we're offering a reward of $250 to help us get started. For more info please email support@newsapi.org, or dive right in and send us a pull request.
+This package is not auto-updated. Please set up the GitHub Service Hook for Packagist so that it gets updated whenever you push!
+News API Commercial PHP Library.
+</pre>
+
+# Requirements
+cUrl Extensions
+
+PHP >= 7.0
+
+ 
+
+#Require the class
+<pre>
+require_once 'News.php';
+</pre>
+
+
+# Include namespace
+<pre>
+use News\Resources as Articles;
+</pre>
+
+ 
+# Extend base class
+<pre>
+class Latest extends Articles{
+	public function __construct(){
+		parent::__construct();
+	}
+}
+</pre>
+ 
+
+# Usage, Get Everything
+ <pre>
+ $queryOptionsEverything = Array(
+	"apiKey"=>"your-api-key", 
+	"from" => "2008-03-02",
+	"to"=>"2018-08-05",
+	"query" => "news-south-africa",
+	"language" => "en"
+	);
+</pre>
+ 
+ Pass the options to setEverything with argument
+ <pre>
+ Latest::setEverything($queryOptionsEverything);
+ </pre>
+ 
+# Usage, Get sources 
+<pre>
+ $queryOptionsSources = Array(
+	"apiKey"=>"your-api-key", 
+	"from" => "2008-03-02",
+	"to"=>"2008-03-05",
+	"query" => "soccer",
+	"country" => "za",
+	"language" => "en"
+	);
+</pre>
+ 
+ Pass the options to setSources with argument
+ <pre>
+ Latest::setSources($queryOptionsSources);
+ </pre>
+ 
+  
+# Usage, Get Headlines 
+<pre>
+ $queryOptionsHeadlines = Array(
+	"apiKey"=>"your-api-key", 
+	"from" => "2008-03-02",
+	"to"=>"2008-03-05",
+	"query" => "soccer",
+	"country" => "za",
+	"language" => "en"
+	);
+ </pre>
+ Pass the options to setHeadlines with argument
+ <pre>
+ Latest::setHeadlines($queryOptionsHeadlines);
+ </pre>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</pre>
+ 
+ 
