@@ -2,7 +2,7 @@
 /*
  *News.ORG PHP Library
  *Author: Goodwish Matyila
- *Use to collect data from API
+ *Use to collect data from API news.org, API is free for developers have to pay for commercial usage.
  *{set, get}Methods Query 
  */
 namespace News;
