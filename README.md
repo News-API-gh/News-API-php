@@ -1,9 +1,20 @@
+
+# newsorg/commercial
+ 
+# Installation 
+<pre> 
+composer require newsorg/commercial
+
+This package is not auto-updated. Please set up the GitHub Service Hook for Packagist so that it gets updated whenever you push!
+News API Commercial PHP Library.
+</pre>
+
 # Requirements
 cUrl Extensions
 
 PHP >= 7.0
 
-***
+ 
 
 #Require the class
 <pre>
@@ -11,14 +22,13 @@ require_once 'News.php';
 </pre>
 
 
-#Include namespace
+# Include namespace
 <pre>
 use News\Resources as Articles;
 </pre>
 
-***
-
-#Extend base class
+ 
+# Extend base class
 <pre>
 class Latest extends Articles{
 	public function __construct(){
@@ -26,9 +36,9 @@ class Latest extends Articles{
 	}
 }
 </pre>
-***
+ 
 
-#Usage, Get Everything
+# Usage, Get Everything
  <pre>
  $queryOptionsEverything = Array(
 	"apiKey"=>"your-api-key", 
@@ -43,8 +53,8 @@ class Latest extends Articles{
  <pre>
  Latest::setEverything($queryOptionsEverything);
  </pre>
- ***
-#Usage, Get sources 
+ 
+# Usage, Get sources 
 <pre>
  $queryOptionsSources = Array(
 	"apiKey"=>"your-api-key", 
@@ -60,9 +70,9 @@ class Latest extends Articles{
  <pre>
  Latest::setSources($queryOptionsSources);
  </pre>
-***
+ 
   
-#Usage, Get Headlines 
+# Usage, Get Headlines 
 <pre>
  $queryOptionsHeadlines = Array(
 	"apiKey"=>"your-api-key", 
