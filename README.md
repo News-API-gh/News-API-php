@@ -1,5 +1,5 @@
 
-# newsorg/commercial
+# News API Commercial PHP Library.
  
 # Installation 
 <pre> 
