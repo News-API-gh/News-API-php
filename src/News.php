@@ -1,20 +1,23 @@
 <?php
 /*
- *News.ORG PHP Library
- *Author: Goodwish Matyila
- *Use to collect data from API news.org, API is free for developers have to pay for commercial usage.
- *{set, get}Methods Query 
+ * News.ORG PHP Library, A free open source for developers only. Use Commercial license.
+ * Author: Goodwish Matyila - South Africa. MICT, National Computer College.
+ * August 2018
+ * Use to collect data from API news.org, API is free for developers have to pay for commercial usage.
+ * {set, get}Methods Query, prefix set RESOURCE NAME, get RESOURCE is privately called with defaults to build end point URL.
+ * Requests are made using cURL GET --as per API standard. Responses are in JSON.
  */
+
 namespace News;
 {
 	abstract class Resources
 	{
+		/* Defaults global vars */
 		private static $url ="https://newsapi.org/v2/";
 		private static $everything = "everything?";
 		private static $sources = "sources?";
 		private static $headlines ="top-headlines?";
 		
-
 		/* Top Headlines @param{options}*/
 		public function setHeadlines($options) :bool
 		{		
@@ -36,15 +39,12 @@ namespace News;
 			return TRUE;
 		}
 		 
-		
-
 		/* Get Headlines @param{options} */
 		private static function getHeadlines($query) : string
 		{
 			$data = json_decode($query);
 			return self::$url.''.self::$headlines.'q='.$data->query.'&apiKey='.$data->apiKey.'&country='.$data->country.'&from='.$data->from.'&to='.$data->to.'&language='.$data->language;
 		}
-
 
 		/* Get Everything @param{options} */
 		private static function getEverything($query) : string
@@ -53,14 +53,12 @@ namespace News;
 			return self::$url.''.self::$everything.'q='.$data->query.'&apiKey='.$data->apiKey.'&from='.$data->from.'&to='.$data->to.'&language='.$data->language;
 		}
 
-
 		/* Get Everything @param{options} */
 		private static function getSources($query) : string
 		{
 			$data = json_decode($query);
 			return self::$url.''.self::$sources.'q='.$data->query.'&apiKey='.$data->apiKey.'&country='.$data->country.'&from='.$data->from.'&to='.$data->to.'&language='.$data->language;
 		}
-
 
 		/* Collect Server Data @param {endpoint url}*/
 		private static function fetchServerData($endPoint)  
@@ -72,7 +70,6 @@ namespace News;
 			));
 			return $resp = curl_exec($curl);
 			curl_close($curl);
-
 		}
 	}
 }
