@@ -1,0 +1,9 @@
+{
+    "name": "news-api/news-api",
+    "type": "library",
+    "license": "MIT",
+    "require": {},
+    "psr-4": {
+        "NewsAPI\\NewsAPI\\": "src/" 
+    }
+}
