@@ -56,7 +56,9 @@ namespace News;
 		/* Get Everything @param{options} */
 		private static function getSources($query) : string
 		{
+			//json decode
 			$data = json_decode($query);
+
 			return self::$url.''.self::$sources.'q='.$data->query.'&apiKey='.$data->apiKey.'&country='.$data->country.'&from='.$data->from.'&to='.$data->to.'&language='.$data->language;
 		}
 
@@ -64,12 +66,19 @@ namespace News;
 		private static function fetchServerData($endPoint)  
 		{
 			$curl = curl_init();
+
 			curl_setopt_array($curl, Array(
 				CURLOPT_RETURNTRANSFER => 1,
 				CURLOPT_URL => ''.$endPoint
 			));
-			return $resp = curl_exec($curl);
+
+			$resp = curl_exec($curl);
+
 			curl_close($curl);
+
+			return $resp;
+
+			
 		}
 	}
 }
