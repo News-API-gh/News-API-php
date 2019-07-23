@@ -24,9 +24,8 @@ class Api extends AbstractApi {
 
         $uri = http_build_query($query);
         $url = self::URL . $type . "?{$uri}";
- 
         
-        if ($this->validate($query) && $this->validate(['type' => $type])) {
+        if ($this->validateQuery($query) && $this->validateType(['type' => $type])) {
             //execute
             $this->call($url);
         }

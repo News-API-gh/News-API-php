@@ -11,7 +11,7 @@ class AbstractApi implements InterfaceApi {
 
     private $data;
 
-    const NEWSAPI = '';
+    const NEWSAPI = 'cec26d4a3d9d4aeaa7684ec614575317';
     const URL = 'https://newsapi.org/v2/';
     const TOP_HEADLINE = 'top-headlines';
     const EVERYTHING = 'everything';
@@ -68,17 +68,30 @@ class AbstractApi implements InterfaceApi {
      * @param type $query
      * @return type
      */
-    protected function validate($query) {
+    protected function validateQuery($query) { 
 
-
-        $validate = (in_array('apiKey', $query) && isset($query['apiKey']) && !empty($query['apiKey'])) ? false : true;
-        if ($validate) {
+        $validate = (key_exists('apiKey', $query) && isset($query['apiKey']) && !empty($query['apiKey'])) ? true : false;
+        if (!$validate) {
             $obj = ['error' => ['apikey' => 'missing apikey']]; 
             $this->setData($obj, false);
-        }
+        } 
 
-        $validate = (isset($query['type']) && (self::TOP_HEADLINE == $query['type'] || self::SOURCES == $query['type'] || self::EVERYTHING == $query['type'])) ? false : true;
-        if ($validate) { 
+       
+        return $validate;
+    }
+    
+    
+    /**
+     * 
+     * @param type $query
+     * @return type
+     */
+    protected function validateType($query) { 
+
+        
+
+        $validate = (isset($query['type']) && ((self::TOP_HEADLINE == $query['type'] || self::SOURCES == $query['type'] || self::EVERYTHING == $query['type']))) ? true : false;
+        if (!$validate) { 
             $obj = ['error' => ['type' => 'type is not correct']];
             $this->setData($obj, false);
         }
