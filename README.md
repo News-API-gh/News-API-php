@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/rodrigomanara/News-API-php.svg?branch=master)](https://travis-ci.org/rodrigomanara/News-API-php.svg?branch=master)
+
 # News API SDK for PHP 
 
 Search through millions of articles from over 30,000 large and small news sources and blogs. This includes breaking news as well as lesser articles.
