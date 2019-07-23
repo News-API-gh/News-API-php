@@ -6,12 +6,13 @@ Search through millions of articles from over 30,000 large and small news source
 find out more about it: [documentation](https://newsapi.org/docs/)
 
 # Example
-
+```
 require_once __DIR__ . '/../vendor/autoload.php';
 
 $api = new \NewsApi\Api( array('q' => 'Reino Unido' , 'language'=> 'pt' , 'apiKey' => newsapi));
-$api->getData();
 
+$api->getData();
+```
 
 # Composer install
 
