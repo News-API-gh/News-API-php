@@ -7,7 +7,7 @@ find out more about it: [documentation](https://newsapi.org/docs/)
 
 # Example
 
-require_once './src/Api.php';
+require_once __DIR__ . '/../vendor/autoload.php';
 
 $api = new \NewsApi\Api( array('q' => 'Reino Unido' , 'language'=> 'pt' , 'apiKey' => newsapi));
 $api->getData();
