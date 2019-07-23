@@ -6,7 +6,7 @@ require_once __DIR__ . '/../vendor/autoload.php';
 
 use NewsApi\Api;
 
-final class NewsApiTest extends PHPUnit\Framework\TestCase {
+final class testApi extends PHPUnit\Framework\TestCase {
     /**
      * 
      * @return void

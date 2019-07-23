@@ -12,7 +12,7 @@
          verbose="true">
    <testsuites>
         <testsuite name="The project's test suite">
-            <directory>./test/</directory> 
+            <file>./test/testApi.php</file> 
         </testsuite>
     </testsuites>
    
