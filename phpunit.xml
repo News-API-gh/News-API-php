@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<phpunit xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+         bootstrap="tests/bootstrap.php"
+         backupGlobals="true" 
+         backupStaticAttributes="false"
+         colors="true"
+         convertErrorsToExceptions="true"
+         convertNoticesToExceptions="true"
+         convertWarningsToExceptions="true"
+         processIsolation="true"
+         stopOnFailure="false"
+         syntaxCheck="false"
+         verbose="true">
+   <testsuites>
+        <testsuite name="The project's test suite">
+            <directory>./test/</directory> 
+        </testsuite>
+    </testsuites>
+   
+</phpunit>
