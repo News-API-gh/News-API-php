@@ -1,0 +1,9 @@
+language: php
+php:
+  - '7.3' 
+sudo: required  
+before_script:
+  - composer install --prefer-source   
+notifications:
+  email:
+    - me@rodrigomanara.co.uk
