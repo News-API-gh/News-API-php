@@ -1,7 +1,7 @@
 
 # News API Commercial PHP Library.
 By Goodwish Matyila
-Support: 082 632-5761
+Support: 084 790-8653
  
 # Installation 
 <pre> 
