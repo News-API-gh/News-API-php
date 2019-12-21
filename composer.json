@@ -1,0 +1,20 @@
+{
+    "name": "rmanara/news-api-php",
+    "description": "Api call for newFeed",
+    "type": "library",
+    "authors": [
+        {
+            "name": "Rodrigo Manara",
+            "email": "me@rodrigomanara.co.uk"
+        }
+    ],
+    "minimum-stability": "stable",
+    "autoload": {
+        "psr-4": {
+            "NewsApi\\": "src/"
+        }
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^7.0"
+    }
+}
