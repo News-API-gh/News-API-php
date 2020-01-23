@@ -1,7 +1,7 @@
 
 # News API Commercial PHP Library.
-By Goodwish Matyila
-Support: 084 790-8653
+By Oren Laboratory
+Support: 087 057-1581
  
 # Installation 
 <pre> 
