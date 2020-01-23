@@ -1,13 +1,5 @@
 <?php
-/*
- * News.ORG PHP Library, A free open source for developers only. Use Commercial license.
- * Author: Goodwish Matyila - South Africa. MICT, National Computer College.
- * August 2018
- * Use to collect data from API news.org, API is free for developers have to pay for commercial usage.
- * {set, get}Methods Query, prefix set RESOURCE NAME, get RESOURCE is privately called with defaults to build end point URL.
- * Requests are made using cURL GET --as per API standard. Responses are in JSON.
- */
-
+ 
 namespace News;
 {
 	abstract class Resources
@@ -58,7 +50,6 @@ namespace News;
 		{
 			//json decode
 			$data = json_decode($query);
-
 			return self::$url.''.self::$sources.'q='.$data->query.'&apiKey='.$data->apiKey.'&country='.$data->country.'&from='.$data->from.'&to='.$data->to.'&language='.$data->language;
 		}
 
@@ -66,19 +57,14 @@ namespace News;
 		private static function fetchServerData($endPoint)  
 		{
 			$curl = curl_init();
-
 			curl_setopt_array($curl, Array(
 				CURLOPT_RETURNTRANSFER => 1,
 				CURLOPT_URL => ''.$endPoint
 			));
-
 			$resp = curl_exec($curl);
-
 			curl_close($curl);
-
 			return $resp;
 
-			
 		}
 	}
 }
